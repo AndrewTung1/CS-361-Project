@@ -232,7 +232,7 @@ class TVList:
                         if new_status is None:
                             print("Action canceled.\n")
                             return
-                        elif new_status == "Dropped" or new_status == "Plan to Watch":
+                        elif new_status == "Watching" or new_status == "Plan to Watch":
                             show.status = new_status
                             show.rating = None
                         elif new_status == "Completed" or new_status == "Dropped":
