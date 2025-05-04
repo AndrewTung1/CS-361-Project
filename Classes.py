@@ -232,11 +232,16 @@ class TVList:
                         if new_status is None:
                             print("Action canceled.\n")
                             return
-                        if new_status == "Completed" or new_status == "Dropped":
+                        elif new_status == "Dropped" or new_status == "Plan to Watch":
+                            show.status = new_status
+                            show.rating = None
+                        elif new_status == "Completed" or new_status == "Dropped":
                             new_rating = self.get_edited_rating()
                             if new_rating is None:
                                 print("Action canceled.\n")
                                 return
+                            show.status = new_status
+                            show.rating = new_rating
                 print(show_name, "has been edited.\n")
             else:
                 print("Action canceled.\n")

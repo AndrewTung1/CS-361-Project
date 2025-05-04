@@ -62,6 +62,5 @@ print("To remove a show, enter 'Remove'. And to delete your entire list, enter '
 print("To clear the terminal and refresh the screen, enter 'Home'")
 print(line, "\n")
 MyTVShows = c.TVList()
-test(MyTVShows)
 while True:
     action(MyTVShows)
