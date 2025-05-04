@@ -14,6 +14,7 @@ class TVList:
         self._list = []
 
     def refresh(self):
+        """Method to go back to the home page by clearing the terminal"""
         os.system('cls')
         print("Welcome to MyTVShows\n")
         print("Keep track of your shows by adding them to your own personalized list with your viewing status and personal rating!\n")
@@ -165,6 +166,7 @@ class TVList:
             print(show_name, "has been added!\n")
 
     def get_edit_remove_name(self):
+        """Method to get the name of the edited or removed show"""
         while True:
             show_name = input("What is the name of the show you would like to edit or remove?\n")
             if show_name == "Cancel":
@@ -191,6 +193,7 @@ class TVList:
                 print("Action canceled.\n")
 
     def get_edited_status(self):
+        """Method to get the status of the edited show"""
         while True:
             new_status = input("What is the new status of this show?\n")
             if new_status == "Cancel":
@@ -201,7 +204,7 @@ class TVList:
                 return new_status
 
     def get_edited_rating(self):
-        """Method to request the rating of a show from the user"""
+        """Method to get the rating of the edited show"""
         while True:
             user_rating = input("What is your new rating of this show?\n")
             if user_rating == "Cancel":
@@ -215,7 +218,7 @@ class TVList:
                     return int(user_rating)
 
     def edit_show(self):
-        """Method to remove a show from the list"""
+        """Method to edit a show from the list"""
         show_name = self.get_edit_remove_name()
         if show_name is None:
             print("Action canceled.\n")
